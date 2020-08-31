@@ -1,0 +1,29 @@
+#+BEGIN_SRC plantuml :file ./arch.png
+abstractFactory <|-- factoryA
+abstractFactory <|-- factoryB
+baseA <|-- classAa
+baseA <|-- classAb
+baseB <|-- classBa
+baseB <|-- classBb
+factoryA --> baseA
+factoryB --> baseB
+
+abstractFactory : getA()
+abstractFactory : getB()
+
+factoryA : getA()
+factoryA : getB()
+factoryB : getA()
+factoryB : getB()
+
+baseA : method()
+baseB : method()
+
+classAa : method()
+classAb : method()
+classBa : method()
+classBb : method()
+#+END_SRC
+
+#+RESULTS:
+[[file:./arch.png]]
