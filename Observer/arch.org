@@ -1,0 +1,19 @@
+#+BEGIN_SRC plantuml :file ./arch.png
+Observer <|-- ObserverA
+Observer <|-- ObserverB
+target --> Observer
+
+Observer : onEvent()
+
+ObserverA : onEvent()
+ObserverB : onEvent()
+
+target : vector<Observer> m_observers
+target : addObserver(Observer* obj)
+target : removeObserver(Observer* obj)
+target : notifyAll()
+
+#+END_SRC
+
+#+RESULTS:
+[[file:./arch.png]]
